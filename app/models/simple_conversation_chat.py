@@ -16,9 +16,9 @@ class SimpleConversationChat:
     def set_memory(self, history):
         for message in history:
             if message.role == 'assistant':
-                self.memory.chat_memory.add_user_message(message.content)
-            else:
                 self.memory.chat_memory.add_ai_message(message.content)
+            else:
+                self.memory.chat_memory.add_user_message(message.content)
 
     def generator(self, user_message):
         g = ThreadedGenerator()
